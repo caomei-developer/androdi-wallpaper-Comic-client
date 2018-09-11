@@ -16,7 +16,6 @@ public class MainActivity extends BaseActivity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		imagePresenter = new ImagePresenter();
 	}
 
 	@Override
@@ -27,10 +26,11 @@ public class MainActivity extends BaseActivity {
 	@Override
 	protected void loadData() {
 		super.loadData();
+		imagePresenter = new ImagePresenter();
 		imagePresenter.post(new CallbackSub<ImageCategory>(new CallBack<ImageCategory>() {
 			@Override
 			public void OnSuccess(ImageCategory imageCategory) {
-
+				uiHandler(imageCategory);
 			}
 
 			@Override
@@ -41,7 +41,7 @@ public class MainActivity extends BaseActivity {
 		}));
 	}
 
-	private void uiHandler(ImageCategory image) {
+	private void uiHandler(ImageCategory imageCategory) {
 
 	}
 
