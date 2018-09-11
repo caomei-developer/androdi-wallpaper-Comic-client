@@ -1,4 +1,4 @@
-package com.common.view.m;
+package com.common.view.mvp.p.m;
 
 /**
  * Created by zw on 2018/9/11.

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="0dp"
+              android:layout_height="match_parent"
+              android:layout_weight="1"
+              android:clipChildren="false"
+              android:gravity="center"
+              android:clickable="true">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="36dp"
+        android:clipChildren="false">
+
+        <ImageView
+            android:id="@+id/icon_image_view"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:id="@+id/title_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="10dp"/>
+
+        <ImageView
+            android:id="@+id/reminder_image_view"
+            android:layout_width="8dp"
+            android:layout_height="8dp"
+            android:layout_alignRight="@+id/icon_image_view"
+            android:layout_marginRight="-6dp"
+            android:layout_marginTop="-4dp"
+            android:background="@drawable/tabbar_circle_reminder"
+            android:visibility="invisible"/>
+    </RelativeLayout>
+</LinearLayout>

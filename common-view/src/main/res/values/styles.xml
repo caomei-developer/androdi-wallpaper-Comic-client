@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Common"></style>
+
+    <style name="Common.Tabbar">
+        <item name="tabbarBackground">@android:color/white</item>
+        <item name="tabbarTextColor">#333333</item>
+        <item name="tabbarSelectedTextColor">#e63528</item>
+        <item name="tabbarDividerBackground">#dedede</item>
+        <item name="tabReminderBackground">@drawable/tabbar_circle_reminder</item>
+    </style>
+
+
+</resources>

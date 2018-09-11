@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="Common.LoadingDialog">
+        <attr name="loadingDialogProgressDrawable" format="reference"/>
+        <attr name="loadingDialogBackground" format="reference"/>
+        <attr name="loadingDialogTextColor" format="color|reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="Common.Toolbar">
+        <attr name="toolbarBackground" format="color|reference"/>
+        <attr name="toolbarTextColor" format="color|reference"/>
+        <attr name="toolbarDividerBackground" format="color|reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="Common.Tabbar">
+        <attr name="tabbarBackground" format="color|reference"/>
+        <attr name="tabbarTextColor" format="color|reference"/>
+        <attr name="tabbarSelectedTextColor" format="color|reference"/>
+        <attr name="tabbarDividerBackground" format="color|reference"/>
+        <attr name="tabReminderBackground" format="color|reference"/>
+    </declare-styleable>
+
+    <attr name="commonToolbarStyle" format="reference"/>
+
+    <attr name="commonTabbarStyle" format="reference"/>
+
+    <declare-styleable name="AutoSlideView">
+        <attr name="ratio" format="float"/>
+        <attr name="autoSlide" format="boolean"/>
+        <attr name="autoSlideInterval" format="integer"/>
+    </declare-styleable>
+
+    <declare-styleable name="DotPageIndicator">
+        <attr name="normalDrawable" format="reference"/>
+        <attr name="selectedDrawable" format="reference"/>
+        <attr name="space" format="dimension|reference"/>
+    </declare-styleable>
+
+    <declare-styleable name="RoundImageView">
+        <attr name="radius" format="dimension"/>
+    </declare-styleable>
+</resources>

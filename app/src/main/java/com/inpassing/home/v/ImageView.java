@@ -1,6 +1,6 @@
 package com.inpassing.home.v;
 
-import com.common.view.v.BaseView;
+import com.common.view.mvp.p.v.BaseView;
 
 /**
  * Created by zw on 2018/9/11.

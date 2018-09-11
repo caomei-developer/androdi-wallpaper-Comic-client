@@ -1,6 +1,6 @@
 package com.inpassing.home.p;
 
-import com.common.view.p.BasePresenter;
+import com.common.view.mvp.p.BasePresenter;
 import com.inpassing.api.APIurl;
 import com.inpassing.home.m.ImageCategory;
 import com.lib.http.RetrofitClient;
