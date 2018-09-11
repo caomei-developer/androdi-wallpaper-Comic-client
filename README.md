@@ -1,1 +1,1 @@
-# androdi-wallpaper-Comic-client
+# android-wallpaper-Comic-client
