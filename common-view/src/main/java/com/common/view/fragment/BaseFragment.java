@@ -13,15 +13,19 @@ public class BaseFragment extends Fragment {
 		initView(view);
 	}
 
-	public void loadData() {
-	}
-
 	public void initView(View view) {
 		initHelper();
 		loadData();
 	}
 
 	public void initHelper() {
+
+	}
+
+	public void loadData() {
+	}
+
+	public void refresh() {
 	}
 
 	public boolean isVisibleToUser() {

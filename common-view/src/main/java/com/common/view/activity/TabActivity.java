@@ -11,13 +11,14 @@ import com.common.view.BaseActivity;
 import com.common.view.R;
 import com.common.view.compoment.Tabbar;
 import com.common.view.fragment.BaseFragment;
+import com.common.view.view.ViewPagerSlide;
 
 import java.util.List;
 
 public class TabActivity extends BaseActivity {
 	protected Tabbar tabbar;
 
-	protected ViewPager viewPager;
+	protected ViewPagerSlide viewPager;
 
 	@Override
 	protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class TabActivity extends BaseActivity {
 		setContentView(R.layout.activity_tab);
 		tabbar = findViewById(R.id.tabbar);
 		viewPager = findViewById(R.id.viewpager);
+		viewPager.setSlide(false);
 		linkTabbarAndViewpager();
 	}
 

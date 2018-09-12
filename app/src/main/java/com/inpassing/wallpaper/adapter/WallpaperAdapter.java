@@ -21,9 +21,8 @@ public class WallpaperAdapter extends RecyclerView.Adapter<WallpaperAdapter.Wall
 	private Context context;
 	private List<Wallpaper.DataBean> list;
 
-	public WallpaperAdapter(Context context, List<Wallpaper.DataBean> list) {
+	public WallpaperAdapter(Context context) {
 		this.context = context;
-		this.list = list;
 	}
 
 	@Override
@@ -36,7 +35,6 @@ public class WallpaperAdapter extends RecyclerView.Adapter<WallpaperAdapter.Wall
 	@Override
 	public void onBindViewHolder(WallpaperViewHolder holder, int position) {
 		CommonImageLoader.load(list.get(position).getUrl()).into(holder.imageView);
-		// Glide.with(context).load(list.get(position).getUrl()).into(holder.imageView);
 	}
 
 	@Override
@@ -50,6 +48,20 @@ public class WallpaperAdapter extends RecyclerView.Adapter<WallpaperAdapter.Wall
 		public WallpaperViewHolder(View itemView) {
 			super(itemView);
 			imageView = itemView.findViewById(R.id.wallpaper_item_image);
+		}
+	}
+
+	public void setList(List<Wallpaper.DataBean> dataBeans) {
+		if (list != null) {
+			list.clear();
+		}
+		this.list = dataBeans;
+	}
+
+	public void addList(List<Wallpaper.DataBean> dataBeans) {
+		if (dataBeans != null && dataBeans.size() > 0) {
+			list.add((Wallpaper.DataBean) dataBeans);
+
 		}
 	}
 

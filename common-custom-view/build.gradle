@@ -15,11 +15,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile files('libs/picasso-2.5.2.jar')
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:design:25.1.1'
     compile project(':http-lib')
 }

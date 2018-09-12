@@ -7,7 +7,7 @@ import com.common.view.util.CompatUtil;
 import com.inpassing.account.AccountFragment;
 import com.inpassing.comic.ComicFragment;
 import com.inpassing.find.FindFragment;
-import com.inpassing.wallpaper.fragment.WallpaperFragment;
+import com.inpassing.wallpaper.fragment.TestFragment;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,6 @@ public class MainActivity extends TabActivity {
 	}
 
 	private void initTabBar() {
-
 		tabItemList.add(new TabItem("图片", CompatUtil.getDrawable(this, R.mipmap.wallpaper_default),
 				CompatUtil.getDrawable(this, R.mipmap.wallpaper_select), false));
 
@@ -42,7 +41,7 @@ public class MainActivity extends TabActivity {
 
 	private void initViewPager() {
 		Bundle bundle = new Bundle();
-		viewPagerFragmentList.add(new PagerFragment(WallpaperFragment.class, bundle));
+		viewPagerFragmentList.add(new PagerFragment(TestFragment.class, bundle));
 		viewPagerFragmentList.add(new PagerFragment(ComicFragment.class, bundle));
 		viewPagerFragmentList.add(new PagerFragment(FindFragment.class, bundle));
 		viewPagerFragmentList.add(new PagerFragment(AccountFragment.class, bundle));
