@@ -13,8 +13,6 @@ public class BaseActivity extends AppCompatActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		initView();
-		loadData();
 	}
 
 	@Override
@@ -28,6 +26,7 @@ public class BaseActivity extends AppCompatActivity {
 		} else {
 			super.setContentView(layoutResID);
 		}
+		initView();
 	}
 
 	private void initToolbar() {
@@ -49,11 +48,16 @@ public class BaseActivity extends AppCompatActivity {
 		return true;
 	}
 
-	protected void loadData() {
+	public void loadData() {
 
 	}
 
-	protected void initView() {
+	public void initView() {
+		initHelper();
+		loadData();
+	}
+
+	public void initHelper() {
 	}
 
 }

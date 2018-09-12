@@ -6,7 +6,7 @@
     android:orientation="vertical"
     tools:context="com.common.view.BaseActivity">
 
-    <com.common.view.compoment.Tabbar
+    <com.common.view.compoment.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />

@@ -2,51 +2,56 @@ package com.inpassing;
 
 import android.os.Bundle;
 
-import com.common.view.BaseActivity;
-import com.inpassing.home.m.ImageCategory;
-import com.inpassing.home.p.ImagePresenter;
-import com.lib.callback.CallBack;
-import com.lib.httpsub.CallbackSub;
+import com.common.view.activity.TabActivity;
+import com.common.view.util.CompatUtil;
+import com.inpassing.account.AccountFragment;
+import com.inpassing.comic.ComicFragment;
+import com.inpassing.find.FindFragment;
+import com.inpassing.wallpaper.fragment.WallpaperFragment;
 
-public class MainActivity extends BaseActivity {
+import java.util.ArrayList;
+import java.util.List;
 
-	private ImagePresenter imagePresenter;
+public class MainActivity extends TabActivity {
+	private List<TabItem> tabItemList = new ArrayList<>();
+
+	private List<PagerFragment> viewPagerFragmentList = new ArrayList<>();
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		initTabBar();
+		initViewPager();
 	}
 
-	@Override
-	protected void initView() {
-		super.initView();
+	private void initTabBar() {
+
+		tabItemList.add(new TabItem("图片", CompatUtil.getDrawable(this, R.mipmap.wallpaper_default),
+				CompatUtil.getDrawable(this, R.mipmap.wallpaper_select), false));
+
+		tabItemList.add(new TabItem("漫画", CompatUtil.getDrawable(this, R.mipmap.comic_default),
+				CompatUtil.getDrawable(this, R.mipmap.comic_select), false));
+
+		tabItemList.add(new TabItem("发现", CompatUtil.getDrawable(this, R.mipmap.find_default),
+				CompatUtil.getDrawable(this, R.mipmap.find_select), false));
+
+		tabItemList.add(new TabItem("我的", CompatUtil.getDrawable(this, R.mipmap.account_default),
+				CompatUtil.getDrawable(this, R.mipmap.account_select), false));
+		setTabItemList(tabItemList);
 	}
 
-	@Override
-	protected void loadData() {
-		super.loadData();
-		imagePresenter = new ImagePresenter();
-		imagePresenter.post(new CallbackSub<ImageCategory>(new CallBack<ImageCategory>() {
-			@Override
-			public void OnSuccess(ImageCategory imageCategory) {
-				uiHandler(imageCategory);
-			}
-
-			@Override
-			public void onFaul(String s) {
-
-			}
-
-		}));
-	}
-
-	private void uiHandler(ImageCategory imageCategory) {
-
+	private void initViewPager() {
+		Bundle bundle = new Bundle();
+		viewPagerFragmentList.add(new PagerFragment(WallpaperFragment.class, bundle));
+		viewPagerFragmentList.add(new PagerFragment(ComicFragment.class, bundle));
+		viewPagerFragmentList.add(new PagerFragment(FindFragment.class, bundle));
+		viewPagerFragmentList.add(new PagerFragment(AccountFragment.class, bundle));
+		setPagerFragmentList(viewPagerFragmentList);
+		viewPager.setOffscreenPageLimit(3);
 	}
 
 	@Override
 	public boolean isToolbar() {
-		return true;
+		return false;
 	}
 }

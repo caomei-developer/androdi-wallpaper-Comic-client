@@ -25,6 +25,9 @@ dependencies {
     compile 'junit:junit:4.12'
     compile 'com.android.support.test:runner:1.0.2'
     compile 'com.android.support.test.espresso:espresso-core:3.0.2'
+    compile 'com.android.support:design:25.1.1'
     compile project(':common-view')
     compile project(':http-lib')
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.android.support:cardview-v7:22.0.0'
 }

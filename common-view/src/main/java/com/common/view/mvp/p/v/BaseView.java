@@ -4,8 +4,7 @@ package com.common.view.mvp.p.v;
  * Created by zw on 2018/9/11.
  */
 
-public interface BaseView<T> {
-	void onSuccess(T v);
+public interface BaseView<T, V> {
+	void onUI(T t, V v);
 
-	void onFilure(T v);
 }

@@ -1,6 +1,6 @@
 package com.inpassing.api;
 
-import com.inpassing.home.m.ImageCategory;
+import com.inpassing.wallpaper.m.Wallpaper;
 
 import io.reactivex.Observable;
 import retrofit2.http.POST;
@@ -11,10 +11,8 @@ import retrofit2.http.Query;
  */
 
 public interface APIurl {
-	String IMAGER_URL = "http://route.showapi.com";
+	String IMAGER_URL = "https://www.apiopen.top";
 
-	@POST("/852-1")
-	Observable<ImageCategory> imageCategory(@Query("showapi_appid") String showapiAppid,
-			@Query("showapi_sign") String showapiSign, @Query("showapi_timestamp") String showapiTimestamp,
-			@Query("showapi_res_gzip") String showapi_res_gzip);
+	@POST("/meituApi?")
+	Observable<Wallpaper> getWallpaper(@Query("page") int page);
 }
