@@ -43,5 +43,7 @@ dependencies {
     //添加HttpLoggingInterceptor进行调试
     //butterknife不是必须
     compile 'com.orhanobut:logger:1.15'
+    //jsoup
+    compile 'org.jsoup:jsoup:1.9.2'
 
 }

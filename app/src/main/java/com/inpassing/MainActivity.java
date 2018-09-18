@@ -5,8 +5,8 @@ import android.os.Bundle;
 import com.common.view.activity.TabActivity;
 import com.common.view.util.CompatUtil;
 import com.inpassing.account.AccountFragment;
-import com.inpassing.comic.ComicFragment;
 import com.inpassing.find.FindFragment;
+import com.inpassing.video.VideoFragment;
 import com.inpassing.wallpaper.fragment.TestFragment;
 
 import java.util.ArrayList;
@@ -42,7 +42,7 @@ public class MainActivity extends TabActivity {
 	private void initViewPager() {
 		Bundle bundle = new Bundle();
 		viewPagerFragmentList.add(new PagerFragment(TestFragment.class, bundle));
-		viewPagerFragmentList.add(new PagerFragment(ComicFragment.class, bundle));
+		viewPagerFragmentList.add(new PagerFragment(VideoFragment.class, bundle));
 		viewPagerFragmentList.add(new PagerFragment(FindFragment.class, bundle));
 		viewPagerFragmentList.add(new PagerFragment(AccountFragment.class, bundle));
 		setPagerFragmentList(viewPagerFragmentList);

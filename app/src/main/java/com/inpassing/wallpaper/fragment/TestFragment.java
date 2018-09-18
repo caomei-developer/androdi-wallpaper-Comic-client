@@ -1,6 +1,6 @@
 package com.inpassing.wallpaper.fragment;
 
-import android.graphics.Color;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -16,12 +16,11 @@ import com.inpassing.wallpaper.m.Wallpaper;
 import com.inpassing.wallpaper.p.WallpaperPresenter;
 import com.inpassing.wallpaper.v.WallpaperView;
 import com.lib.callback.CallBack;
-import com.lib.httpsub.CallbackSub;
+import com.lib.httpsub.HttpCallback;
 
 public class TestFragment extends BaseFragment {
 	private TextView title;
 	private CmSwipeMenuRecyclerView recyclerView;
-
 	private WallpaperPresenter wallpaperPresenter;
 	private WallpaperView wallpaperView;
 
@@ -36,6 +35,7 @@ public class TestFragment extends BaseFragment {
 		return inflater.inflate(R.layout.test_wallpaper_fragment, container, false);
 	}
 
+	@SuppressLint("ResourceAsColor")
 	@Override
 	public void initView(View view) {
 		super.initView(view);
@@ -43,24 +43,21 @@ public class TestFragment extends BaseFragment {
 		title.setText("美图桌面");
 		recyclerView = view.findViewById(R.id.recycler_view);
 		recyclerView.setOnPullLoadMoreListener(new PullLoadMoreListener());
-		recyclerView.getLoadMoreFooterView().setBackgroundColor(Color.BLUE);
 		recyclerView.setStaggeredGridLayout(true, 2);
-		recyclerView.setLoadMoreTextColor(Color.WHITE);
 	}
 
 	@Override
 	public void initHelper() {
-		super.initHelper();
+		// super.initHelper();
 		wallpaperView = new WallpaperView();
 		wallpaperPresenter = new WallpaperPresenter();
-
 	}
 
 	@Override
 	public void loadData() {
 		super.loadData();
 		wallpaperPresenter.setPage(page);
-		wallpaperPresenter.post(new CallbackSub<Wallpaper>(new CallBack<Wallpaper>() {
+		wallpaperPresenter.post(new HttpCallback<Wallpaper>(new CallBack<Wallpaper>() {
 			@Override
 			public void OnSuccess(Wallpaper wallpaper) {
 				if (wallpaper != null) {

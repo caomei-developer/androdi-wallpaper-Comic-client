@@ -16,7 +16,7 @@ import com.inpassing.wallpaper.m.Wallpaper;
 import com.inpassing.wallpaper.p.WallpaperPresenter;
 import com.inpassing.wallpaper.v.WallpaperView;
 import com.lib.callback.CallBack;
-import com.lib.httpsub.CallbackSub;
+import com.lib.httpsub.HttpCallback;
 
 public class WallpaperFragment extends BaseFragment {
 	private RecyclerView recyclerView;
@@ -63,7 +63,7 @@ public class WallpaperFragment extends BaseFragment {
 	public void loadData() {
 		super.loadData();
 		wallpaperPresenter.setPage(page);
-		wallpaperPresenter.post(new CallbackSub<Wallpaper>(new CallBack<Wallpaper>() {
+		wallpaperPresenter.post(new HttpCallback<Wallpaper>(new CallBack<Wallpaper>() {
 			@Override
 			public void OnSuccess(Wallpaper wallpaper) {
 				if (wallpaper != null) {

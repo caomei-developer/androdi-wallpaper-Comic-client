@@ -76,8 +76,7 @@ public class CmRecyclerView extends FrameLayout {
 		mContext = context;
 		View view = LayoutInflater.from(context).inflate(resId > 0 ? resId : R.layout.cm_recyclerview_recycler, null);
 		mSwipeRefreshLayout = view.findViewById(R.id.swipeRefreshLayout);
-		mSwipeRefreshLayout.setColorSchemeResources(android.R.color.holo_green_dark, android.R.color.holo_blue_dark,
-				android.R.color.holo_orange_dark);
+		mSwipeRefreshLayout.setColorSchemeResources(R.color.colorPrimary);
 		mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayoutOnRefresh(this));
 
 		mRecyclerView = view.findViewById(R.id.recycler_view);
@@ -95,7 +94,6 @@ public class CmRecyclerView extends FrameLayout {
 		if (isLoadMoreEnabled) {
 			setLoadMoreFooter(new DefLoadMoreFooter(getContext()));
 		}
-
 		this.addView(view);
 	}
 
@@ -446,7 +444,6 @@ public class CmRecyclerView extends FrameLayout {
 	 */
 	public CmRecyclerView setLoadMoreProgressView(View view) {
 		if (loadMoreFooter != null && loadMoreFooter instanceof DefLoadMoreFooter) {
-			((DefLoadMoreFooter) loadMoreFooter).setProgressView(view);
 		}
 		return this;
 	}

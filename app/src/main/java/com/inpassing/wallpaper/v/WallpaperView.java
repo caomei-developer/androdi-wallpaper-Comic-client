@@ -22,6 +22,7 @@ public class WallpaperView extends BaseInit<View> implements BaseView<Wallpaper,
 			recyclerAdapter = new TestWallpaperAdapter();
 			((CmSwipeMenuRecyclerView) view).setAdapter(recyclerAdapter);
 		}
+
 	}
 
 	@Override

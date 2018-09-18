@@ -17,10 +17,10 @@ import retrofit2.HttpException;
  * Created by zw on 2018/9/11.
  */
 
-public class CallbackSub<T> extends DisposableObserver<T> {
+public class HttpCallback<T> extends DisposableObserver<T> {
 	private CallBack<T> callBack;
 
-	public CallbackSub(CallBack callBack) {
+	public HttpCallback(CallBack callBack) {
 		this.callBack = callBack;
 	}
 

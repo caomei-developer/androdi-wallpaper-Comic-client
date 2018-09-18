@@ -197,7 +197,6 @@ public class WrapperRecyclerAdapter extends RecyclerView.Adapter<RecyclerView.Vi
 	 */
 	public WrapperRecyclerAdapter setLoadMoreProgressView(View view) {
 		if (loadMoreFooter != null && loadMoreFooter instanceof DefLoadMoreFooter) {
-			((DefLoadMoreFooter) loadMoreFooter).setProgressView(view);
 		}
 		return this;
 	}
